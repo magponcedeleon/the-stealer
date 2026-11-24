@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Stealer - Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="m-0 p-0 font-sans text-stone-900 antialiased bg-amber-50/30">
+
+  <!-- Full-Screen Hero Section with Background Image -->
+  <header class="relative min-h-screen w-full bg-cover bg-center bg-no-repeat flex flex-col justify-between"
+        style="background-image: url('Background%20for%20webpage_01.png');">
+    
+    <!-- Subtle Top Gradient for Navbar Readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60 pointer-events-none"></div>
+
+    <!-- Top Navigation -->
+    <nav class="relative z-10 flex items-center justify-between px-6 py-5 max-w-7xl mx-auto w-full text-white">
+      <a href="#" class="text-2xl font-bold tracking-tight">The Stealer</a>
+      <div class="flex items-center gap-6">
+        <a href="#shop" class="hover:text-amber-300 transition font-medium">Shop</a>
+        <button onclick="toggleCart()" class="relative bg-amber-500 hover:bg-amber-600 text-stone-950 font-semibold px-4 py-2 rounded-full transition flex items-center gap-2 shadow-md">
+          <span>Cart</span>
+          <span id="cart-count" class="bg-stone-950 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Call-to-Action -->
+    <div class="relative z-10 max-w-3xl mx-auto text-center px-6 pb-20 text-white">
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-md">
+        100% Pure, Unfiltered Raw Honey
+      </h1>
+      <p class="mt-4 text-lg md:text-xl text-stone-100 drop-shadow">
+        Harvested straight from local wildflower meadows. Unheated, unprocessed, and packed with natural enzymes.
+      </p>
+      <a href="#shop" class="mt-8 inline-block bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-lg px-8 py-3.5 rounded-full shadow-lg transition transform hover:-translate-y-0.5">
+        Shop Our Honey
+      </a>
+    </div>
+  </header>
+
+  <!-- Shop Section -->
+  <section id="shop" class="max-w-7xl mx-auto px-6 py-20">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-amber-600 font-semibold uppercase tracking-wider text-sm">Small Batch Harvest</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-1 text-stone-900">Choose Your Jar</h2>
+      <p class="text-stone-600 mt-3">Every jar is cold-extracted to preserve delicate floral notes and natural pollen.</p>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Product 1 -->
+      <div class="bg-white rounded-2xl shadow-sm border border-stone-200/80 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+        <div>
+          <div class="h-64 bg-amber-100/60 flex items-center justify-center p-6">
+            <img src="Mockup_Honey jar_01.png" 
+                 alt="Wildflower Raw Honey" 
+                 class="h-full object-contain rounded-lg">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-bold text-stone-900">Wildflower Raw Honey</h3>
+              <span class="text-lg font-bold text-amber-600">$14.00</span>
+            </div>
+            <p class="text-sm text-stone-500 mt-1">350g (12 oz) Glass Jar</p>
+            <p class="text-stone-600 text-sm mt-3">Rich, floral, and lightly sweet. Perfect for morning tea, toast, and everyday drizzling.</p>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <button onclick="addToCart('Wildflower Raw Honey (350g)', 14)" 
+                  class="w-full bg-stone-900 hover:bg-amber-500 hover:text-stone-950 text-white font-semibold py-3 rounded-xl transition">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white rounded-2xl shadow-sm border-2 border-amber-400 overflow-hidden flex flex-col justify-between hover:shadow-md transition relative">
+        <span class="absolute top-3 right-3 bg-amber-400 text-stone-950 text-xs font-bold uppercase px-3 py-1 rounded-full">Best Seller</span>
+        <div>
+          <div class="h-64 bg-amber-100/60 flex items-center justify-center p-6">
+            <img src="Mockup_Honey Jar_01.png" 
+                 alt="Acacia Reserve Honey" 
+                 class="h-full object-contain rounded-lg">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-bold text-stone-900">Acacia Reserve Honey</h3>
+              <span class="text-lg font-bold text-amber-600">$18.50</span>
+            </div>
+            <p class="text-sm text-stone-500 mt-1">500g (17.6 oz) Glass Jar</p>
+            <p class="text-stone-600 text-sm mt-3">Crystal-clear, ultra-smooth, and slow to crystallize with delicate vanilla undertones.</p>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <button onclick="addToCart('Acacia Reserve Honey (500g)', 18.50)" 
+                  class="w-full bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold py-3 rounded-xl transition">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white rounded-2xl shadow-sm border border-stone-200/80 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+        <div>
+          <div class="h-64 bg-amber-100/60 flex items-center justify-center p-6">
+            <img src="Mockup_Honey Jar_01.png" 
+                 alt="Forest & Heather Honey" 
+                 class="h-full object-contain rounded-lg">
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-start">
+              <h3 class="text-xl font-bold text-stone-900">Forest & Heather Honey</h3>
+              <span class="text-lg font-bold text-amber-600">$22.00</span>
+            </div>
+            <p class="text-sm text-stone-500 mt-1">500g (17.6 oz) Glass Jar</p>
+            <p class="text-stone-600 text-sm mt-3">Dark, bold, and earthy with caramel depth. Pairs remarkably well with aged cheeses.</p>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <button onclick="addToCart('Forest & Heather Honey (500g)', 22)" 
+                  class="w-full bg-stone-900 hover:bg-amber-500 hover:text-stone-950 text-white font-semibold py-3 rounded-xl transition">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Slide-Over Shopping Cart Drawer -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+    <!-- Backdrop -->
+    <div onclick="toggleCart()" class="fixed inset-0 bg-black/50 backdrop-blur-xs"></div>
+    
+    <!-- Drawer Panel -->
+    <div class="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl p-6 flex flex-col justify-between z-10">
+      <div>
+        <div class="flex items-center justify-between border-b pb-4">
+          <h3 class="text-xl font-bold">Your Honey Cart</h3>
+          <button onclick="toggleCart()" class="text-stone-500 hover:text-stone-900 text-2xl leading-none">&times;</button>
+        </div>
+        <div id="cart-items" class="mt-6 space-y-4 max-h-[60vh] overflow-y-auto">
+          <p class="text-stone-500 text-sm">Your cart is empty.</p>
+        </div>
+      </div>
+
+      <div class="border-t pt-4">
+        <div class="flex justify-between text-lg font-bold mb-4">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+        <button onclick="checkout()" class="w-full bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold py-3.5 rounded-xl transition">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimal Cart Logic -->
+  <script>
+    let cart = [];
+
+    function toggleCart() {
+      document.getElementById('cart-drawer').classList.toggle('hidden');
+    }
+
+    function addToCart(name, price) {
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      updateCartUI();
+      document.getElementById('cart-drawer').classList.remove('hidden');
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const cartItemsEl = document.getElementById('cart-items');
+      const cartCountEl = document.getElementById('cart-count');
+      const cartTotalEl = document.getElementById('cart-total');
+
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+      cartCountEl.textContent = totalQty;
+      cartTotalEl.textContent = `$${totalPrice.toFixed(2)}`;
+
+      if (cart.length === 0) {
+        cartItemsEl.innerHTML = '<p class="text-stone-500 text-sm">Your cart is empty.</p>';
+        return;
+      }
+
+      cartItemsEl.innerHTML = cart.map((item, idx) => `
+        <div class="flex items-center justify-between bg-stone-50 p-3 rounded-xl border border-stone-200/70">
+          <div>
+            <p class="font-semibold text-sm text-stone-900">${item.name}</p>
+            <p class="text-xs text-stone-500">$${item.price.toFixed(2)} &times; ${item.qty}</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="font-bold text-sm">$${(item.price * item.qty).toFixed(2)}</span>
+            <button onclick="removeFromCart(${idx})" class="text-red-500 hover:text-red-700 text-xs font-semibold">Remove</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert('Add a jar of honey to your cart first!');
+        return;
+      }
+      alert('Thank you for your order! Total: ' + document.getElementById('cart-total').textContent);
+      cart = [];
+      updateCartUI();
+      toggleCart();
+    }
+  </script>
+
+</body>
+</html>
